@@ -52,7 +52,7 @@ namespace ATM_Management_System
 
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "Select yourname,mobailno,amount From account Where accountno = '" + lbl_accountno.Text + "'";
+                cmd.CommandText = "select full_name,mobile_no,amount from accounts_tbl where account_no = '" + lbl_accountno.Text + "'";
 
                 cmd.ExecuteNonQuery();
 
@@ -127,13 +127,13 @@ namespace ATM_Management_System
 
                     con.Open();
 
-                    String str = "Update account Set amount = '" + txt_totalamount.Text + "' Where accountno = '" + lbl_accountno.Text + "'";
+                    String str = "update accounts_tbl set amount = '" + txt_totalamount.Text + "' where account_no = '" + lbl_accountno.Text + "'";
 
                     SqlCommand cmd = new SqlCommand(str, con);
 
                     cmd.ExecuteNonQuery();
 
-                    String str1 = "Select max(amount) From account";
+                    String str1 = "select max(amount) From accounts_tbl";
 
                     SqlCommand cmd1 = new SqlCommand(str1, con);
 
@@ -174,13 +174,13 @@ namespace ATM_Management_System
 
                 con.Open();
 
-                String str = "Insert Into transections(accountno,name,mobailno,transectiontype,amount,totalamount,date)Values('" + lbl_accountno.Text + "','" + lbl_name.Text + "','" + lbl_mobailno.Text + "','" + type + "','" + txt_drawamount.Text + "','" + txt_totalamount.Text + "','" + lbl_date.Text + "')";
+                String str = "insert into transactions_tbl(account_no,name,mobile_no,transaction_type,amount,total_amount,date) values ('" + lbl_accountno.Text + "','" + lbl_name.Text + "','" + lbl_mobailno.Text + "','" + type + "','" + txt_drawamount.Text + "','" + txt_totalamount.Text + "','" + lbl_date.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(str, con);
 
                 cmd.ExecuteNonQuery();
 
-                String str1 = "Select max(accountno) From transections";
+                String str1 = "select max(account_no) from transactions_tbl";
 
                 SqlCommand cmd1 = new SqlCommand(str1, con);
 

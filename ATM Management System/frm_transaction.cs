@@ -33,22 +33,22 @@ namespace ATM_Management_System
         private void transectionsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.transectionsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.ds_transection);
+            this.transactionsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.ds_transaction);
 
         }
 
-        private void frm_transection_Load(object sender, EventArgs e)
+        private void frm_transaction_Load(object sender, EventArgs e)
         {
             account = frm_main.account_no;
 
             lbl_accountno.Text = account;
 
-            showtransections();
+            showTransactions();
 
         }
 
-        private void showtransections()
+        private void showTransactions()
         {
             try
             {
@@ -60,7 +60,7 @@ namespace ATM_Management_System
 
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "Select * From transections Where accountno = '" + lbl_accountno.Text + "'";
+                cmd.CommandText = "select * from transactions_tbl where account_no = '" + lbl_accountno.Text + "'";
 
                 cmd.ExecuteNonQuery();
 

@@ -37,26 +37,25 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.transactionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ds_transection = new ATM_Management_System.ds_transection();
+            this.ds_transaction = new ATM_Management_System.ds_transaction();
+            this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new ATM_Management_System.ds_transectionTableAdapters.TableAdapterManager();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Transaction_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transectionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_transection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_transaction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(128)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 434);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -107,7 +106,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(328, 393);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
@@ -119,7 +118,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.transactionsDataGridView);
-            this.panel3.Location = new System.Drawing.Point(9, 86);
+            this.panel3.Location = new System.Drawing.Point(7, 86);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(686, 305);
@@ -141,14 +140,13 @@
             this.transactionsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.transactionsDataGridView.ColumnHeadersHeight = 40;
             this.transactionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.transactionsDataGridView.DataSource = this.transectionsBindingSource;
+            this.Transaction_ID,
+            this.Account_No,
+            this.FullName,
+            this.Amount,
+            this.Type,
+            this.Date});
+            this.transactionsDataGridView.DataSource = this.ds_transaction;
             this.transactionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transactionsDataGridView.EnableHeadersVisualStyles = false;
             this.transactionsDataGridView.GridColor = System.Drawing.Color.White;
@@ -165,70 +163,59 @@
             this.transactionsDataGridView.TabIndex = 0;
             this.transactionsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.transectionsDataGridView_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // ds_transaction
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "tranid";
-            this.dataGridViewTextBoxColumn1.HeaderText = "T ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 120;
+            this.ds_transaction.DataSetName = "ds_transaction";
+            this.ds_transaction.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn3
+            // transactionsBindingSource
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "mobailno";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Mobail No.";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "transectiontype";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Transection Type";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "amount";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "totalamount";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Total Amount";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Date & Time";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 200;
-            // 
-            // transectionsBindingSource
-            // 
-            this.transectionsBindingSource.DataMember = "transections";
-            this.transectionsBindingSource.DataSource = this.ds_transection;
-            // 
-            // ds_transection
-            // 
-            this.ds_transection.DataSetName = "ds_transection";
-            this.ds_transection.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.transactionsBindingSource.DataMember = "transactions";
+            this.transactionsBindingSource.DataSource = this.ds_transaction;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.transactionsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ATM_Management_System.ds_transectionTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "transaction_type";
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "amount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "name";
+            this.FullName.HeaderText = "Name";
+            this.FullName.Name = "FullName";
+            // 
+            // Account_No
+            // 
+            this.Account_No.DataPropertyName = "account_no";
+            this.Account_No.HeaderText = "Account_No";
+            this.Account_No.Name = "Account_No";
+            // 
+            // Transaction_ID
+            // 
+            this.Transaction_ID.DataPropertyName = "transaction_id";
+            this.Transaction_ID.HeaderText = "Transaction_ID";
+            this.Transaction_ID.Name = "Transaction_ID";
+            this.Transaction_ID.ReadOnly = true;
             // 
             // frm_transaction
             // 
@@ -245,14 +232,14 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_transaction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_transection";
-            this.Load += new System.EventHandler(this.frm_transection_Load);
+            this.Text = "frm_transaction";
+            this.Load += new System.EventHandler(this.frm_transaction_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.transactionsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transectionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_transection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_transaction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,17 +252,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
-        private ds_transection ds_transection;
-        private System.Windows.Forms.BindingSource transectionsBindingSource;
+        private ds_transaction ds_transaction;
+        private System.Windows.Forms.BindingSource transactionsBindingSource;
         private ds_transectionTableAdapters.TableAdapterManager tableAdapterManager;
         public System.Windows.Forms.DataGridView transactionsDataGridView;
         private System.Windows.Forms.Label lbl_accountno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Transaction_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Account_No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
     }
 }

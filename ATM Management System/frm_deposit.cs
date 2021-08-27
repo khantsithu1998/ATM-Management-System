@@ -59,9 +59,9 @@ namespace ATM_Management_System
 
                     if (dr.Read())
                     {
-                        addtransection();
+                        addTransaction();
                         MessageBox.Show("Your transaction Is Successful!... ", "Sucesss", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadbalance();
+                        loadBalance();
                         txt_addamount.Clear();
                     }
                     else
@@ -81,7 +81,7 @@ namespace ATM_Management_System
             }
         }
 
-        private void addtransection()
+        private void addTransaction()
         {
             try
             {
@@ -97,7 +97,7 @@ namespace ATM_Management_System
 
                     cmd.ExecuteNonQuery();
 
-                    String str1 = "select max(date) From transactions_tbl";
+                    String str1 = "select max(date) from transactions_tbl";
 
                     SqlCommand cmd1 = new SqlCommand(str1, con);
 
@@ -125,7 +125,7 @@ namespace ATM_Management_System
         }
 
 
-        private void loadbalance()
+        private void loadBalance()
         {
             account = frm_main.account_no;
 
@@ -192,7 +192,7 @@ namespace ATM_Management_System
         private void frm_deposti_Load(object sender, EventArgs e)
         {
             lbl_date.Text = DateTime.Now.ToString();
-            loadbalance();
+            loadBalance();
         }
 
         private void txt_addamount_TextChanged(object sender, EventArgs e)

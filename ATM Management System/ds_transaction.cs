@@ -2,7 +2,7 @@
 {
 
 
-    partial class ds_transection
+    partial class ds_transaction
     {
     }
 }

@@ -82,7 +82,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(308, 80);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(377, 338);
             this.panel1.TabIndex = 31;
@@ -95,7 +95,7 @@
             this.btn_Submit.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Submit.ForeColor = System.Drawing.Color.White;
             this.btn_Submit.Location = new System.Drawing.Point(55, 195);
-            this.btn_Submit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Submit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(296, 49);
             this.btn_Submit.TabIndex = 37;
@@ -107,7 +107,7 @@
             // 
             this.txt_drawamount.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_drawamount.Location = new System.Drawing.Point(55, 122);
-            this.txt_drawamount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_drawamount.Margin = new System.Windows.Forms.Padding(2);
             this.txt_drawamount.Multiline = true;
             this.txt_drawamount.Name = "txt_drawamount";
             this.txt_drawamount.Size = new System.Drawing.Size(297, 45);
@@ -156,7 +156,7 @@
             // 
             this.txt_totalamount.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_totalamount.Location = new System.Drawing.Point(50, 327);
-            this.txt_totalamount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_totalamount.Margin = new System.Windows.Forms.Padding(2);
             this.txt_totalamount.Multiline = true;
             this.txt_totalamount.Name = "txt_totalamount";
             this.txt_totalamount.Size = new System.Drawing.Size(208, 45);
@@ -186,9 +186,9 @@
             this.lbl_mobailno.Location = new System.Drawing.Point(83, 144);
             this.lbl_mobailno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_mobailno.Name = "lbl_mobailno";
-            this.lbl_mobailno.Size = new System.Drawing.Size(111, 24);
+            this.lbl_mobailno.Size = new System.Drawing.Size(110, 24);
             this.lbl_mobailno.TabIndex = 42;
-            this.lbl_mobailno.Text = "Mobail No.";
+            this.lbl_mobailno.Text = "Phone No.";
             this.lbl_mobailno.Visible = false;
             // 
             // lbl_accountno
@@ -249,7 +249,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_withdraw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_withdraw";

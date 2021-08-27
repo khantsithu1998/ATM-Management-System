@@ -48,7 +48,7 @@ namespace ATM_Management_System
 
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = "Select * From accounts_tbl Where account_no = '" + txt_accountno.Text + "' and pin = '" + txt_pin.Text + "'";
+                    cmd.CommandText = "select * from accounts_tbl where account_no = '" + txt_accountno.Text + "' and pin = '" + txt_pin.Text + "'";
 
                     cmd.ExecuteNonQuery();
 
